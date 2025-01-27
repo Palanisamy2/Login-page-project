@@ -15,10 +15,7 @@ password: {
     type: String,
     required: true,
 },
-// newpassword: {
-//     type: String,
-//     required: true,
-// },
+
   isAdmin: { type: Boolean, default: false },
 });
 
