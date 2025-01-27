@@ -35,7 +35,7 @@ const ChangePassword = () => {
       toast.success("Password updated successfully!", { position: "top-right", autoClose: 3000 });
 
       // Navigate to login page after successful password change
-      setTimeout(() => navigate('/login'), 3000);
+      setTimeout(() => navigate('/login'), 2000);
     } catch (error) {
       toast.error("Failed to update password. Try again.", { position: "top-right", autoClose: 3000 });
     }

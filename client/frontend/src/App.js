@@ -12,7 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import './styles/styles.css';
 import Footer from './components/Footer';
 import UserDashboard from './components/UserDashboard';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 

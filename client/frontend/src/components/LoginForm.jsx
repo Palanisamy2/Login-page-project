@@ -6,18 +6,20 @@ import { login } from '../services/authService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faUserTie, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { toast } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const LoginForm = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [uniqueKey, setUniqueKey] = useState(""); // For admin unique key
-  const [role, setRole] = useState(""); // To track selected radio button
-  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+  const [uniqueKey, setUniqueKey] = useState(""); 
+  const [role, setRole] = useState(""); 
+  const [showPassword, setShowPassword] = useState(false); 
   const navigate = useNavigate();
 
   const handleCreateAccount = () => {
-    navigate("/signup");
+     toast.success("SYou're Going to Signup !!!", { position: "top-right", autoClose: 3000 });
+    setTimeout(() => navigate("/signup"), 2000);
   };
 
   const handleForgotPassword = () => {
@@ -45,17 +47,17 @@ const LoginForm = ({ setIsLoggedIn }) => {
         setIsLoggedIn(true);
 
         if (role === "admin" && uniqueKey === "Admin47") {
+          navigate('/admin-dashboard');
           toast.success("Successfully logged as admin!", {
             position: "top-right",
             autoClose: 3000,
           });
-          navigate('/admin-dashboard');
         } else {
+          navigate('/user-dashboard');
           toast.success("Successfully logged as user!", {
             position: "top-right",
             autoClose: 3000,
           });
-          navigate('/user-dashboard');
         }
       }
     } catch (error) {
